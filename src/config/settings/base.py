@@ -1,7 +1,10 @@
-import os
 from pathlib import Path
+import os
+
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parents[3]
+load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "unsafe-change-me")
 DEBUG = os.getenv("DJANGO_DEBUG", "0") == "1"
@@ -17,6 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework.authtoken",
+    "corsheaders",
     "apps.core",
     "apps.accounts",
     "apps.profiles",
@@ -31,6 +35,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -109,3 +114,8 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 20,
 }
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    origin for origin in os.getenv("CORS_ALLOWED_ORIGINS", "").split(",") if origin
+]
