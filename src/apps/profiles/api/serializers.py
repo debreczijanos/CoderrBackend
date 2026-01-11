@@ -3,7 +3,7 @@ from rest_framework import serializers
 from apps.profiles.models import Profile
 
 
-class ProfileSerializer(serializers.ModelSerializer):
+class BaseProfileSerializer(serializers.ModelSerializer):
     user = serializers.IntegerField(source="user.id", read_only=True)
     username = serializers.CharField(source="user.username", required=False)
     first_name = serializers.CharField(source="user.first_name", required=False, allow_blank=True)
@@ -37,3 +37,31 @@ class ProfileSerializer(serializers.ModelSerializer):
             setattr(instance, attr, value)
         instance.save()
         return instance
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        for key in ["first_name", "last_name", "location", "tel", "description", "working_hours"]:
+            if data.get(key) is None:
+                data[key] = ""
+        return data
+
+
+class ProfileDetailSerializer(BaseProfileSerializer):
+    class Meta(BaseProfileSerializer.Meta):
+        fields = BaseProfileSerializer.Meta.fields + ["created_at"]
+
+
+class ProfileListSerializer(BaseProfileSerializer):
+    class Meta(BaseProfileSerializer.Meta):
+        fields = [
+            "user",
+            "username",
+            "first_name",
+            "last_name",
+            "file",
+            "location",
+            "tel",
+            "description",
+            "working_hours",
+            "type",
+        ]

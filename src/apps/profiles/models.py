@@ -19,6 +19,7 @@ class Profile(models.Model):
     tel = models.CharField(max_length=50, blank=True)
     description = models.TextField(blank=True)
     working_hours = models.CharField(max_length=200, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return f"{self.user.username} ({self.type})"
