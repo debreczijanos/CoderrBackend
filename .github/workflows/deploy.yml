@@ -1,0 +1,35 @@
+name: Deploy Backend (main)
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            set -e
+
+            cd /home/deploy/apps/backend
+
+            # Ensure we are on main and up-to-date
+            git fetch origin main
+            git checkout main
+            git reset --hard origin/main
+
+            source .venv/bin/activate
+
+            pip install -r requirements.txt
+
+            cd src
+            python manage.py migrate --noinput
+            python manage.py collectstatic --noinput
+
+            sudo systemctl restart gunicorn-backend
