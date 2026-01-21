@@ -1,0 +1,814 @@
+[
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": 7,
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": 7,
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": 7,
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": 7,
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": 8,
+    "codename": "add_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": 8,
+    "codename": "change_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": 8,
+    "codename": "delete_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": 8,
+    "codename": "view_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add profile",
+    "content_type": 9,
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change profile",
+    "content_type": 9,
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete profile",
+    "content_type": 9,
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view profile",
+    "content_type": 9,
+    "codename": "view_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add offer",
+    "content_type": 10,
+    "codename": "add_offer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change offer",
+    "content_type": 10,
+    "codename": "change_offer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete offer",
+    "content_type": 10,
+    "codename": "delete_offer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view offer",
+    "content_type": 10,
+    "codename": "view_offer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add offer detail",
+    "content_type": 11,
+    "codename": "add_offerdetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change offer detail",
+    "content_type": 11,
+    "codename": "change_offerdetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete offer detail",
+    "content_type": 11,
+    "codename": "delete_offerdetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view offer detail",
+    "content_type": 11,
+    "codename": "view_offerdetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add order",
+    "content_type": 12,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change order",
+    "content_type": 12,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": 12,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view order",
+    "content_type": 12,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add review",
+    "content_type": 13,
+    "codename": "add_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change review",
+    "content_type": 13,
+    "codename": "change_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete review",
+    "content_type": 13,
+    "codename": "delete_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view review",
+    "content_type": 13,
+    "codename": "view_review"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$3PwNvGDkzPqPHNbCZBbpPZ$8YLzeLiPvlouPSYy4jVY3GNMqliVW1G515hEnPXv8QY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "janos",
+    "first_name": "",
+    "last_name": "",
+    "email": "debreczijanos@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-06T19:11:36.560Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$YWTu9VxpCVkSk90lVUQJOg$1Yq1PGKQc98dAHTzTHALryfwV+J+Dub+KFIjHgH+Q7I=",
+    "last_login": "2026-01-20T18:59:49.731Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.de",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-01-06T19:15:05.858Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$gxLKYHCFud7llHwSE6dly6$3rJAooxBRpq8JsxbfIslCYmN0WLBxy3aTxqPj6alKJ4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "andrey",
+    "first_name": "",
+    "last_name": "",
+    "email": "andrey@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-06T19:19:28.819Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$F30V0H3oo96GfCd5mN7BLp$oB5SgnxtMrylXsD6xAgkcg6dna39dxjd+nZeLuGp5nw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kevin",
+    "first_name": "",
+    "last_name": "",
+    "email": "kevin@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-06T19:19:57.782Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$3LtBMGx2Ft2yJ7zqbmHhMO$QdiVWWBEXc3f9wLnIe0FrAf4DoEka0IfGdP3tHr6IS4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser1",
+    "first_name": "Max",
+    "last_name": "Mustermann",
+    "email": "new_email@business.de",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-11T19:11:12.440Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "18ccc31adfeaf9972829ee75b2c6cc742dc51d73",
+  "fields": {
+    "user": 7,
+    "created": "2026-01-11T19:11:12.684Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "6af13f66f1527749e9f52a63b0babfc1f43a53ee",
+  "fields": {
+    "user": 1,
+    "created": "2026-01-06T19:11:36.808Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "6da2a8a556408b1ba09122fae9e2581d946b5897",
+  "fields": {
+    "user": 3,
+    "created": "2026-01-06T19:19:29.068Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "a0dcd470c9304ebc7f3ad645baf32d6159837b9a",
+  "fields": {
+    "user": 2,
+    "created": "2026-01-18T19:51:26.033Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "df72afc614b58c26c6ad459ccd9cf45ed858ebba",
+  "fields": {
+    "user": 4,
+    "created": "2026-01-06T19:19:58.036Z"
+  }
+},
+{
+  "model": "profiles.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "type": "customer",
+    "file": "",
+    "location": "",
+    "tel": "",
+    "description": "",
+    "working_hours": "",
+    "created_at": "2026-01-11T19:10:37.390Z"
+  }
+},
+{
+  "model": "profiles.profile",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "type": "customer",
+    "file": "",
+    "location": "",
+    "tel": "",
+    "description": "",
+    "working_hours": "",
+    "created_at": "2026-01-11T19:10:37.390Z"
+  }
+},
+{
+  "model": "profiles.profile",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "type": "business",
+    "file": "",
+    "location": "",
+    "tel": "",
+    "description": "",
+    "working_hours": "",
+    "created_at": "2026-01-11T19:10:37.390Z"
+  }
+},
+{
+  "model": "profiles.profile",
+  "pk": 4,
+  "fields": {
+    "user": 7,
+    "type": "customer",
+    "file": "",
+    "location": "Berlin",
+    "tel": "987654321",
+    "description": "Aktualisierte Beschreibung",
+    "working_hours": "10-18",
+    "created_at": "2026-01-11T19:11:12.683Z"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 1,
+  "fields": {
+    "business_user": 4,
+    "reviewer": 3,
+    "rating": 5,
+    "description": "Noch besser als erwartet!",
+    "created_at": "2026-01-18T20:07:51.041Z",
+    "updated_at": "2026-01-18T20:13:29.512Z"
+  }
+},
+{
+  "model": "offers.offer",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "title": "Grafikdesign-Paket",
+    "image": "",
+    "description": "Ein umfassendes Grafikdesign-Paket für Unternehmen.",
+    "created_at": "2026-01-18T19:10:29.583Z",
+    "updated_at": "2026-01-18T19:10:29.583Z"
+  }
+},
+{
+  "model": "offers.offer",
+  "pk": 5,
+  "fields": {
+    "user": 4,
+    "title": "Grafikdesign-Paket",
+    "image": "",
+    "description": "Ein umfassendes Grafikdesign-Paket für Unternehmen.",
+    "created_at": "2026-01-18T19:16:13.901Z",
+    "updated_at": "2026-01-18T19:16:13.902Z"
+  }
+},
+{
+  "model": "offerdetails.offerdetail",
+  "pk": 7,
+  "fields": {
+    "offer": 3,
+    "title": "Basic Design",
+    "revisions": 2,
+    "delivery_time_in_days": 5,
+    "price": "100.00",
+    "features": [
+      "Logo Design",
+      "Visitenkarte"
+    ],
+    "offer_type": "basic"
+  }
+},
+{
+  "model": "offerdetails.offerdetail",
+  "pk": 8,
+  "fields": {
+    "offer": 3,
+    "title": "Standard Design",
+    "revisions": 5,
+    "delivery_time_in_days": 7,
+    "price": "200.00",
+    "features": [
+      "Logo Design",
+      "Visitenkarte",
+      "Briefpapier"
+    ],
+    "offer_type": "standard"
+  }
+},
+{
+  "model": "offerdetails.offerdetail",
+  "pk": 9,
+  "fields": {
+    "offer": 3,
+    "title": "Premium Design",
+    "revisions": 10,
+    "delivery_time_in_days": 10,
+    "price": "500.00",
+    "features": [
+      "Logo Design",
+      "Visitenkarte",
+      "Briefpapier",
+      "Flyer"
+    ],
+    "offer_type": "premium"
+  }
+},
+{
+  "model": "offerdetails.offerdetail",
+  "pk": 13,
+  "fields": {
+    "offer": 5,
+    "title": "Basic Design",
+    "revisions": 2,
+    "delivery_time_in_days": 5,
+    "price": "100.00",
+    "features": [
+      "Logo Design",
+      "Visitenkarte"
+    ],
+    "offer_type": "basic"
+  }
+},
+{
+  "model": "offerdetails.offerdetail",
+  "pk": 14,
+  "fields": {
+    "offer": 5,
+    "title": "Standard Design",
+    "revisions": 5,
+    "delivery_time_in_days": 7,
+    "price": "200.00",
+    "features": [
+      "Logo Design",
+      "Visitenkarte",
+      "Briefpapier"
+    ],
+    "offer_type": "standard"
+  }
+},
+{
+  "model": "offerdetails.offerdetail",
+  "pk": 15,
+  "fields": {
+    "offer": 5,
+    "title": "Premium Design",
+    "revisions": 10,
+    "delivery_time_in_days": 10,
+    "price": "500.00",
+    "features": [
+      "Logo Design",
+      "Visitenkarte",
+      "Briefpapier",
+      "Flyer"
+    ],
+    "offer_type": "premium"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 2,
+  "fields": {
+    "customer_user": 3,
+    "business_user": 4,
+    "title": "Basic Design",
+    "revisions": 2,
+    "delivery_time_in_days": 5,
+    "price": "100.00",
+    "features": [
+      "Logo Design",
+      "Visitenkarte"
+    ],
+    "offer_type": "basic",
+    "status": "completed",
+    "created_at": "2026-01-18T19:42:04.824Z",
+    "updated_at": "2026-01-18T19:45:31.763Z"
+  }
+}
+]
