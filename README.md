@@ -16,8 +16,8 @@ Lightweight Django REST API for a freelancer platform (Coderr).
 - Python 3.12+
 - Django 5
 - Django REST Framework
-- TokenAuth
-- SQLite (dev)
+- Django REST Framework Token Authentication
+- SQLite (development)
 - CORS middleware
 
 ## Project Structure
@@ -27,11 +27,11 @@ Lightweight Django REST API for a freelancer platform (Coderr).
 - `src/apps/common/` shared utilities
 - `src/manage.py`
 
-## Installation
+## Installation (Local Development)
 
 Prerequisites: Python 3.12+
 
-Mac/Linux
+### macOS / Linux
 
 ```bash
 python -m venv .venv
@@ -42,7 +42,7 @@ python src/manage.py createsuperuser  # optional
 python src/manage.py runserver
 ```
 
-Windows (PowerShell)
+### Windows (PowerShell)
 
 ```bash
 py -m venv .venv
@@ -53,12 +53,12 @@ python src/manage.py createsuperuser  # optional
 python src/manage.py runserver
 ```
 
-## Lokales Testen mit Demo-Daten (empfohlen)
+## Local Testing with Demo Data (Recommended)
 
-Dieses Projekt enthält vorbereitete Demo-Daten (User, Profile, Offers, Orders, Reviews),
-damit das Backend nach dem Klonen sofort getestet werden kann.
+This project includes prepared demo data (users, profiles, offers, orders, reviews)
+so the backend can be tested immediately after cloning.
 
-### Schritte
+### Steps
 
 ```bash
 python src/manage.py migrate
@@ -66,15 +66,15 @@ python src/manage.py loaddata fixtures/demo_data.json
 python src/manage.py runserver
 ```
 
-### Demo-Zugänge
+### Demo Accounts
 
 - **andrey** / `asdasd`
 - **kevin** / `asdasd24`
 
-> Hinweis: Die Demo-Daten sind für lokale Tests gedacht.  
-> In der Produktionsumgebung (z. B. mit MySQL) werden eigene Benutzer und Tokens verwendet.
+> Note: Demo data is intended for local testing only.
+> In production environments (e.g. MySQL), separate users and tokens are used.
 
-API Base:
+API Base URLs:
 
 - `http://127.0.0.1:8000/api/`
 - `http://127.0.0.1:8000/api/v1/`
@@ -133,7 +133,7 @@ Base Info
 
 - `GET /api/base-info/`
 
-## CORS (dev)
+## CORS (Development)
 
 Allowed origins are configured via `CORS_ALLOWED_ORIGINS` in `.env`.
 Defaults include:
