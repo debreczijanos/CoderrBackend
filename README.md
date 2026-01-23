@@ -22,7 +22,7 @@ Lightweight Django REST API for a freelancer platform (Coderr).
 
 ## Project Structure
 
-- `core/` settings, URLs, WSGI/ASGI
+- `core/` settings.py, URLs, WSGI/ASGI
 - App folders are at the project root (accounts_app, profiles_app, offers_app, offerdetails_app, orders_app, reviews_app, base_info_app)
 - `manage.py`
 
