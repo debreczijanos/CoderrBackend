@@ -22,10 +22,9 @@ Lightweight Django REST API for a freelancer platform (Coderr).
 
 ## Project Structure
 
-- `src/config/` settings, URLs, WSGI/ASGI
-- `src/apps/` domain apps (accounts, profiles, offers, offerdetails, orders, reviews)
-- `src/apps/common/` shared utilities
-- `src/manage.py`
+- `core/` settings, URLs, WSGI/ASGI
+- App folders are at the project root (accounts_app, profiles_app, offers_app, offerdetails_app, orders_app, reviews_app, base_info_app)
+- `manage.py`
 
 ## Installation (Local Development)
 
@@ -37,9 +36,9 @@ Prerequisites: Python 3.12+
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python src/manage.py migrate
-python src/manage.py createsuperuser  # optional
-python src/manage.py runserver
+python manage.py migrate
+python manage.py createsuperuser  # optional
+python manage.py runserver
 ```
 
 ### Windows (PowerShell)
@@ -48,9 +47,9 @@ python src/manage.py runserver
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-python src/manage.py migrate
-python src/manage.py createsuperuser  # optional
-python src/manage.py runserver
+python manage.py migrate
+python manage.py createsuperuser  # optional
+python manage.py runserver
 ```
 
 ## Local Testing with Demo Data (Recommended)
@@ -61,9 +60,9 @@ so the backend can be tested immediately after cloning.
 ### Steps
 
 ```bash
-python src/manage.py migrate
-python src/manage.py loaddata fixtures/demo_data.json
-python src/manage.py runserver
+python manage.py migrate
+python manage.py loaddata fixtures/demo_data.json
+python manage.py runserver
 ```
 
 ### Demo Accounts
