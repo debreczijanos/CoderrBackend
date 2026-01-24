@@ -132,6 +132,17 @@ Base Info
 
 - `GET /api/base-info/`
 
+## Documentation
+
+This project ships MkDocs documentation in `docs/`.
+
+```bash
+pip install mkdocs
+mkdocs serve -a 127.0.0.1:8001
+```
+
+Then open: `http://127.0.0.1:8001/`
+
 ## CORS (Development)
 
 Allowed origins are configured via `CORS_ALLOWED_ORIGINS` in `.env`.

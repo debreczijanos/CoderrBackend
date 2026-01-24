@@ -1,0 +1,9 @@
+site_name: Coderr Backend
+site_description: API documentation for the Coderr backend
+site_url: http://127.0.0.1:8000/
+theme:
+  name: mkdocs
+nav:
+  - Home: index.md
+  - Setup: setup.md
+  - API: api.md
