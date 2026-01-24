@@ -1,10 +1,19 @@
 from django.urls import path
 
-from . import views
+from .views import (
+    OrderCompletedCountView,
+    OrderCountView,
+    OrderDetailView,
+    OrdersCollectionView,
+)
 
 urlpatterns = [
-    path("orders/", views.orders_collection, name="orders-collection"),
-    path("orders/<int:order_id>/", views.order_detail, name="orders-detail"),
-    path("order-count/<int:profile_id>/", views.order_count, name="orders-count"),
-    path("completed-order-count/<int:profile_id>/", views.order_completed_count, name="orders-completed-count"),
+    path("orders/", OrdersCollectionView.as_view(), name="orders-collection"),
+    path("orders/<int:order_id>/", OrderDetailView.as_view(), name="orders-detail"),
+    path("order-count/<int:profile_id>/", OrderCountView.as_view(), name="orders-count"),
+    path(
+        "completed-order-count/<int:profile_id>/",
+        OrderCompletedCountView.as_view(),
+        name="orders-completed-count",
+    ),
 ]

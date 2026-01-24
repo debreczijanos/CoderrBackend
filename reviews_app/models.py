@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Review(models.Model):
+    """Customer review for a business user."""
     business_user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="business_reviews"
     )

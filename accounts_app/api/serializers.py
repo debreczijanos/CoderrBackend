@@ -8,11 +8,13 @@ User = get_user_model()
 
 
 class LoginSerializer(serializers.Serializer):
+    """Validate login credentials."""
     username = serializers.CharField()
     password = serializers.CharField(write_only=True)
 
 
 class RegistrationSerializer(serializers.Serializer):
+    """Validate registration payload and uniqueness constraints."""
     username = serializers.CharField()
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True)
@@ -20,6 +22,7 @@ class RegistrationSerializer(serializers.Serializer):
     type = serializers.ChoiceField(choices=Profile.TYPE_CHOICES)
 
     def validate(self, attrs):
+        """Enforce password match and unique username/email."""
         if attrs["password"] != attrs["repeated_password"]:
             raise serializers.ValidationError({"repeated_password": "Passwords do not match."})
         if User.objects.filter(username=attrs["username"]).exists():

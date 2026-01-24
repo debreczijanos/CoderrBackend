@@ -4,6 +4,7 @@ from profiles_app.models import Profile
 
 
 class BaseProfileSerializer(serializers.ModelSerializer):
+    """Shared profile serializer for user and profile fields."""
     user = serializers.IntegerField(source="user.id", read_only=True)
     username = serializers.CharField(source="user.username", required=False)
     first_name = serializers.CharField(source="user.first_name", required=False, allow_blank=True)
@@ -28,6 +29,7 @@ class BaseProfileSerializer(serializers.ModelSerializer):
         read_only_fields = ["type"]
 
     def update(self, instance, validated_data):
+        """Update user and profile fields in one request."""
         user_data = validated_data.pop("user", {})
         for attr, value in user_data.items():
             setattr(instance.user, attr, value)
@@ -39,6 +41,7 @@ class BaseProfileSerializer(serializers.ModelSerializer):
         return instance
 
     def to_representation(self, instance):
+        """Normalize empty profile fields to empty strings."""
         data = super().to_representation(instance)
         for key in ["first_name", "last_name", "location", "tel", "description", "working_hours"]:
             if data.get(key) is None:
@@ -47,11 +50,13 @@ class BaseProfileSerializer(serializers.ModelSerializer):
 
 
 class ProfileDetailSerializer(BaseProfileSerializer):
+    """Profile serializer including creation timestamp."""
     class Meta(BaseProfileSerializer.Meta):
         fields = BaseProfileSerializer.Meta.fields + ["created_at"]
 
 
 class ProfileListSerializer(BaseProfileSerializer):
+    """List serializer for profiles."""
     class Meta(BaseProfileSerializer.Meta):
         fields = [
             "user",

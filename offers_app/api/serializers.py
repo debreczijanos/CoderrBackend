@@ -7,6 +7,7 @@ from offers_app.models import Offer
 
 
 class OfferDetailInputSerializer(serializers.Serializer):
+    """Input payload for offer detail creation."""
     title = serializers.CharField()
     revisions = serializers.IntegerField()
     delivery_time_in_days = serializers.IntegerField()
@@ -16,18 +17,21 @@ class OfferDetailInputSerializer(serializers.Serializer):
 
 
 class OfferCreateSerializer(serializers.Serializer):
+    """Validate offer creation payload."""
     title = serializers.CharField()
     description = serializers.CharField(allow_blank=True, required=False)
     image = serializers.FileField(required=False, allow_null=True)
     details = OfferDetailInputSerializer(many=True)
 
     def to_internal_value(self, data):
+        """Normalize legacy 'Details' key to 'details'."""
         if "details" not in data and "Details" in data:
             data = data.copy()
             data["details"] = data.get("Details")
         return super().to_internal_value(data)
 
     def validate_details(self, value):
+        """Ensure exactly three tiered details are provided."""
         if len(value) != 3:
             raise serializers.ValidationError("Exactly 3 offer details are required.")
         types = {item["offer_type"] for item in value}
@@ -43,6 +47,7 @@ class OfferCreateSerializer(serializers.Serializer):
 
 
 class OfferDetailUpdateSerializer(serializers.Serializer):
+    """Input payload for updating offer detail items."""
     title = serializers.CharField(required=False)
     revisions = serializers.IntegerField(required=False)
     delivery_time_in_days = serializers.IntegerField(required=False)
@@ -54,12 +59,14 @@ class OfferDetailUpdateSerializer(serializers.Serializer):
 
 
 class OfferUpdateSerializer(serializers.Serializer):
+    """Validate offer update payload."""
     title = serializers.CharField(required=False)
     description = serializers.CharField(allow_blank=True, required=False)
     image = serializers.FileField(required=False, allow_null=True)
     details = OfferDetailUpdateSerializer(many=True, required=False)
 
     def to_internal_value(self, data):
+        """Normalize legacy 'Details' key to 'details'."""
         if "details" not in data and "Details" in data:
             data = data.copy()
             data["details"] = data.get("Details")
@@ -67,11 +74,13 @@ class OfferUpdateSerializer(serializers.Serializer):
 
 
 class OfferDetailUrlSerializer(serializers.Serializer):
+    """Minimal representation of offer detail links."""
     id = serializers.IntegerField()
     url = serializers.CharField()
 
 
 class OfferListSerializer(serializers.ModelSerializer):
+    """List serializer with aggregated offer data."""
     user = serializers.IntegerField(source="user.id", read_only=True)
     details = serializers.SerializerMethodField()
     min_price = serializers.SerializerMethodField()
@@ -95,24 +104,28 @@ class OfferListSerializer(serializers.ModelSerializer):
         ]
 
     def get_details(self, obj):
+        """Return detail IDs and URLs for list responses."""
         details = []
         for detail in obj.details.all():
             details.append({"id": detail.id, "url": f"/offerdetails/{detail.id}/"})
         return details
 
     def get_min_price(self, obj):
+        """Compute the minimum price across offer details."""
         if hasattr(obj, "min_price") and obj.min_price is not None:
             return float(obj.min_price)
         prices = [detail.price for detail in obj.details.all()]
         return float(min(prices)) if prices else 0
 
     def get_min_delivery_time(self, obj):
+        """Compute the minimum delivery time across offer details."""
         if hasattr(obj, "min_delivery_time") and obj.min_delivery_time is not None:
             return int(obj.min_delivery_time)
         times = [detail.delivery_time_in_days for detail in obj.details.all()]
         return min(times) if times else 0
 
     def get_user_details(self, obj):
+        """Expose basic user identity fields."""
         return {
             "first_name": obj.user.first_name or "",
             "last_name": obj.user.last_name or "",
@@ -121,6 +134,7 @@ class OfferListSerializer(serializers.ModelSerializer):
 
 
 class OfferResponseSerializer(serializers.ModelSerializer):
+    """Detailed offer serializer for single-item responses."""
     user = serializers.IntegerField(source="user.id", read_only=True)
     details = serializers.SerializerMethodField()
     min_price = serializers.SerializerMethodField()
@@ -142,21 +156,25 @@ class OfferResponseSerializer(serializers.ModelSerializer):
         ]
 
     def get_details(self, obj):
+        """Return detail IDs and URLs for detail responses."""
         details = []
         for detail in obj.details.all():
             details.append({"id": detail.id, "url": f"/offerdetails/{detail.id}/"})
         return details
 
     def get_min_price(self, obj):
+        """Compute the minimum price across offer details."""
         prices = [detail.price for detail in obj.details.all()]
         return float(min(prices)) if prices else 0
 
     def get_min_delivery_time(self, obj):
+        """Compute the minimum delivery time across offer details."""
         times = [detail.delivery_time_in_days for detail in obj.details.all()]
         return min(times) if times else 0
 
 
 class OfferWithDetailsSerializer(serializers.ModelSerializer):
+    """Offer serializer with inline detail items."""
     details = OfferDetailItemSerializer(many=True)
 
     class Meta:

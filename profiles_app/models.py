@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Profile(models.Model):
+    """User profile metadata for business or customer accounts."""
     TYPE_BUSINESS = "business"
     TYPE_CUSTOMER = "customer"
     TYPE_CHOICES = [

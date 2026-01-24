@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Order(models.Model):
+    """Order created from an offer detail between customer and business."""
     STATUS_IN_PROGRESS = "in_progress"
     STATUS_COMPLETED = "completed"
     STATUS_CANCELLED = "cancelled"

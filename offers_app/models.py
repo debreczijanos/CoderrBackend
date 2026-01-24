@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Offer(models.Model):
+    """Offer created by a business user."""
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="offers"
     )

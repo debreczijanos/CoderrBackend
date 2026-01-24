@@ -1,7 +1,7 @@
 from django.urls import path
 
-from . import views
+from .views import OfferDetailView
 
 urlpatterns = [
-    path("offerdetails/<int:detail_id>/", views.offer_detail, name="offerdetails-detail"),
+    path("offerdetails/<int:detail_id>/", OfferDetailView.as_view(), name="offerdetails-detail"),
 ]

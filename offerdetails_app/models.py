@@ -4,6 +4,7 @@ from offers_app.models import Offer
 
 
 class OfferDetail(models.Model):
+    """Tiered offer details (basic/standard/premium)."""
     TYPE_BASIC = "basic"
     TYPE_STANDARD = "standard"
     TYPE_PREMIUM = "premium"

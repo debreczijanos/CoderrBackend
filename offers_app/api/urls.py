@@ -1,8 +1,8 @@
 from django.urls import path
 
-from . import views
+from .views import OfferDetailView, OffersCollectionView
 
 urlpatterns = [
-    path("offers/", views.offers_collection, name="offers-collection"),
-    path("offers/<int:offer_id>/", views.offer_detail, name="offers-detail"),
+    path("offers/", OffersCollectionView.as_view(), name="offers-collection"),
+    path("offers/<int:offer_id>/", OfferDetailView.as_view(), name="offers-detail"),
 ]
